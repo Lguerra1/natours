@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* set box sizing here to inherit is a good practice */
+  box-sizing: inherit;
+}
+
+html {
+  /* 62.5% in percentage is the same as 10px (10/ 16) */
+  // this defines what 1rem is;
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
