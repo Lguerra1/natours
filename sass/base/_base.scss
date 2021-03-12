@@ -14,11 +14,35 @@
 }
 
 html {
-  /* 62.5% in percentage is the same as 10px (10/ 16) */
+  /* 62.5% in percentage is the same as 10px (10 / 16) */
+  //all measurements will scale according to font size when using rems;
+
   // this defines what 1rem is;
+  // 1rem = 10px;
   font-size: 62.5%;
+
+  // @include respond-phone {
+  //   font-size: 50%;
+  //   background-color: purple;
+  // }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px, 12/16 = 75%;
+  }
+  @include respond(tab-land) {
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1rem = 8px, 8/16 = 50%;
+  }
 }
 
 body {
+  /* setting box sizing here is a good practice */
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
