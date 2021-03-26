@@ -4,11 +4,18 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($color-black, 0.9);
+  background-color: rgba($color-black, 0.8);
   z-index: 3500;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s;
+
+  @supports (-webkit-backdrop-filter: blur(1rem)) or (backdrop-filter: blur(1rem)) 
+  {
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+    background-color: rgba($color-black, 0.3);
+  }
 
   &__content {
     @include centerHorizontalVertical;
@@ -20,8 +27,8 @@
     display: table;
     overflow: hidden;
     opacity: 0;
-    transform: translate(-50%, -50%) scale(.25);
-    transition: all .5s .2s;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.5s 0.2s;
   }
 
   &__left {
@@ -67,8 +74,8 @@
   }
 
   &:target &__content {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 
   &__close {
